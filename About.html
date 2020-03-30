@@ -1,0 +1,214 @@
+<html>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="/path/to/c3.css" rel="stylesheet">   
+<link rel='stylesheet' href="about.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Poppins&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <head>
+        <script src="data.json"></script>
+    <title> About me </title>
+     <body>
+    
+        
+        <nav>
+        <label class="logo"> Poverty</label>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="Compare.html">Compare</a></li>
+            <li><a class="active" href="About.html">About me</a></li>
+                    </ul>
+        </nav>
+    </body>
+    <h1><center> What Does Poverty mean to me?</center></h1>
+        
+ <h2> Meet the Developer</h2>    
+    
+       <img src="john.JPG" alt="Avatar">
+    
+ 
+
+    
+   <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2",
+	title:{
+		text: "World Povetry Average From JSON data (By Percentage)"
+	},
+	axisY:{
+		includeZero: false
+	},
+	data: [{        
+		type: "line",
+      	indexLabelFontSize: 16,
+		dataPoints: [
+			{ x:2015,y: 9.9, indexLabel: "\u2191 lowest",markerColor: "red", markerType: "triangle" },
+			{ x:2013,y: 11.2},
+			{ x:2012,y: 12.8 },
+			{ x:2011,y: 13.7 },
+			{ x:2010,y: 15.7 },
+			{ x:2008,y: 18.2 },
+			{ x:2005,y: 20.7 },
+			{ x:2002,y: 25.5, indexLabel: "\u2193 highest",markerColor: "DarkSlateGrey", markerType: "cross" },
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 400px; width: 50%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
+ 
+
+
+
+<body>
+       <!-- Trigger/Open The Modal -->
+<button id="myBtn">Learn About me!!!!</button>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+      <img src="john.JPG" alt="image">
+    
+    <p>Hi my name is John O'Reilly from Toronto Canada. I'm a 9th grade student that attends Upper Canada Colledge. This year we had an assignment to choose a sustainable development goal. Out of the 17 available choices I decided to pursue poverty. I choose povetry as this particular issue effects over 1.3 billion people. This means that over 1/7 people live with less than 1.25$ USD a day. I made this website so that I could raise awarness towards poverty and help inspire people to educate themselves about the less fortunate and help aid with the situation. This project so far has been both educational and fun with learning about povertt around the world and more so my ability to code.Throughout the unit I progressed incredibly in CSS and learned the basics of Java Script while continuing on progressing my advanced HTML knowledge. Throughout this project I am proud of my work and I hope to only improve my coding skills and educate people about this cause.<br> If you would like to <a href='https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCBBCtWJcdfQjwbdLDjvsqxDljHzxhsVfMknPdKftjjDXzLXHNbWsNvDhmpPjhlrLbSjqV'>contact me</a> about my code or any questions about poverty I would be more than happy to help. </p>
+        <img2 src="unlogo.jpeg" alt="image">
+  </div>
+
+</div>
+
+    <body>
+        <h1>Bar Graph With Canvas</h1>
+        <div id="mydata"></div>
+        
+        <canvas id="myCanvas" width="1300px" height="300" style="border:2px solid #fff;"></canvas>
+        
+    </body>
+   
+    <script>
+        
+        getData();
+        drawGraph();
+        
+        function getData() {
+            var mydiv = document.getElementById("mydata");
+            mydiv.innerHTML = data[0]['GeoAreaName'] + " " + data[0]['Value'] + "%";
+            
+        }
+        
+        function drawGraph() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            
+            // draw some values * 50
+            ctx.fillStyle = "white";
+            ctx.fillRect(10,10,data[0]['Value'] * 75,50);
+            ctx.font = "25px Arial";
+           var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0"," green");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+            // Fill with gradient
+            ctx.fillStyle = gradient;
+            ctx.fillText("2011", 15, 35);
+            ctx.fillStyle = "blue";
+            ctx.fillRect(10,80,data[49]['Value'] * 75,50);
+              ctx.font = "22px Arial";
+           var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0"," white");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+            ctx.fillStyle = gradient;
+            ctx.fillText("2013", 12, 110);
+            
+            ctx.fillStyle = "red";
+            ctx.fillRect(10,150,data[70]['Value'] * 75,50);
+            ctx.font = "25px Arial";
+           var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0"," white");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+            // Fill with gradient
+            ctx.fillStyle = gradient;
+            ctx.fillText("2015", 15, 180);
+            
+             ctx.font = "25px Arial";
+           var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0"," white");
+            gradient.addColorStop("0.5", "white");
+            gradient.addColorStop("1.0", "white");
+            // Fill with gradient
+            ctx.fillStyle = gradient;
+            ctx.fillText("GDP lost by year for Canada due to natural disasters in (%)", 15, 250);
+            
+        }
+        
+    </script>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<body>
+<center> <div style="position: absolute; bottom: -550px; background-color: black; color: white; width: 1500px; height: 60px; left: 0px;"> <br>John O'Reilly// Year 9// Scaddings</div> </center>
+
+</body>
+
+   
+</html>
